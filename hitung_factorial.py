@@ -6,7 +6,7 @@ def hitung_faktorial(n):
     elif n == 0:
         return 1
     else:
-        return n + hitung_faktorial(n-1)
+        return n * hitung_faktorial(n-1)
     
 angka = int(input("Masukkan sebuah bilangan bulat : "))
 
