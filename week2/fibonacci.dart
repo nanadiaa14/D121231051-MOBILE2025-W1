@@ -1,5 +1,6 @@
 import 'dart:io';
 
+// Fungsi untuk menghitung bilangan Fibonacci
 int fibonacci(int n) {
   if(n == 0 || n == 1){
     return n;
@@ -25,6 +26,7 @@ void main() {
   try {
     String? input = stdin.readLineSync();
 
+    // Error handling : Jika input kosong, anggap sebagai -1 agar masuk validasi error
     if (input == null || input.isEmpty) {
       print("Error: Tidak ada input yang diberikan.");
       return;
@@ -32,6 +34,7 @@ void main() {
 
     int n = int.parse(input);
 
+    // Validasi : Memastikan n tidak negatif
     if (n<0) {
       print("Error: Harap masukkan bilangan bulat positif.");
     } else {
@@ -40,10 +43,10 @@ void main() {
       print("Bilangan Fibonacci ke-$n adalah: $hasil");
     }
   } on FormatException {
-    // 3. MENANGKAP ERROR JIKA INPUT BUKAN ANGKA
+    // Menangkap error jika input yang dimasukkan bukan angka
     print("Error: Input tidak valid. Harap masukkan sebuah angka.");
   } catch (e) {
-    // Menangkap error tak terduga lainnya
+    // Menangkap error lainnya
     print("Terjadi sebuah kesalahan: $e");
   }
 }
